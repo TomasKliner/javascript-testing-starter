@@ -1,6 +1,5 @@
 import { describe, test, it, expect } from 'vitest';
-import {max, fizzBuzz} from '../src/intro.js'
-
+import {max, fizzBuzz, calcAvg} from '../src/intro.js'
 describe("max", () => {
     it('should return the larger of two numbers', () => {
         expect(max(1, 2)).toBe(2);
@@ -26,4 +25,19 @@ describe("fizzBuzz", () => {
     it("should return number as string if number is not divisible by 3 or 5", () => {
         expect(fizzBuzz(2)).toBe('2');
     })
+})
+
+
+//TDD Excercise
+describe("calculateAverage", () => {
+    it("should return NaN if empty array is passed", () => {
+        expect(calcAvg([])).toBe(NaN);
+    })
+    it("should calc the average of array with single element", ()=>{
+        expect(calcAvg([1])).toBe(1);
+    })
+    it("should return the average of an array of numbers", () => {
+        expect(calcAvg([1, 2, 3, 4, 5])).toBe(3);
+    })
+
 })
