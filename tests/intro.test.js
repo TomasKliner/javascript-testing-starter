@@ -1,5 +1,5 @@
 import { describe, test, it, expect } from 'vitest';
-import {max, fizzBuzz, calcAvg} from '../src/intro.js'
+import { max, fizzBuzz, calcAvg, factorial } from '../src/intro.js'
 describe("max", () => {
     it('should return the larger of two numbers', () => {
         expect(max(1, 2)).toBe(2);
@@ -33,11 +33,34 @@ describe("calculateAverage", () => {
     it("should return NaN if empty array is passed", () => {
         expect(calcAvg([])).toBe(NaN);
     })
-    it("should calc the average of array with single element", ()=>{
+    it("should calc the average of array with single element", () => {
         expect(calcAvg([1])).toBe(1);
     })
     it("should return the average of an array of numbers", () => {
         expect(calcAvg([1, 2, 3, 4, 5])).toBe(3);
     })
 
+})
+
+
+//TDD Factorial
+describe("factorial", () => {
+    it("should return 1 for 0", () => {
+        expect(factorial(0)).toBe(1);
+    })
+    it("should return 1 for 1", () => {
+        expect(factorial(1)).toBe(1);
+    })
+    it("should return 2 for 2", () => {
+        expect(factorial(2)).toBe(2);
+    })
+    it("should return 6 for 3", () => {
+        expect(factorial(3)).toBe(6);
+    })
+    it("should return 24 for 4", () => {
+        expect(factorial(4)).toBe(24);
+    })
+    it("should return undefined for negative number", () => {
+        expect(factorial(-1)).toBe(undefined);
+    })
 })

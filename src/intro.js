@@ -19,3 +19,15 @@ export function calcAvg(arr) {
   return arr.reduce((cum, x) => cum += x, 0) / arr.length;
 
 }
+
+
+//TDD Factorial
+
+export function factorial(num) {
+  if (num < 0) return undefined
+  if (num === 0 || num === 1)
+    return 1;
+  else
+    return num * factorial(num - 1);
+
+}
